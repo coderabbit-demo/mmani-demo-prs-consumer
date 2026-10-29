@@ -1,0 +1,17 @@
+{
+  "name": "mmani-demo-prs-consumer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Fulfillment and finance service that consumes the mmani-demo-prs Orders API.",
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node src/server.ts",
+    "test": "node --test 'test/*.test.ts'",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}

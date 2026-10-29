@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://storage.googleapis.com/coderabbit_public_assets/schema.v2.json
+# Downstream consumer of coderabbit-demo/mmani-demo-prs (Orders API).
+language: en-US
+
+reviews:
+  profile: chill
+  high_level_summary: true
+
+knowledge_base:
+  code_guidelines:
+    enabled: true
+    filePatterns:
+      - "coderabbit-demo/coderabbit-standards:guidelines/**/*.md"
+      - "coderabbit-demo/coderabbit-standards:commerce/**/*.md"
+  automatic_linking_mode: disabled
+  linked_repositories:
+    - repository: "coderabbit-demo/mmani-demo-prs"
+      instructions: >-
+        Upstream orders service (services/orders) and its shared contract
+        (packages/contracts/src/orders.ts). This repo reads GET /orders/:id and relies on
+        every line being a physical SKU with quantity >= 1 and on
+        netCents = subtotalCents - discountCents >= 0.
