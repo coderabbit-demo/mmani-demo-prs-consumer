@@ -5,8 +5,25 @@ language: en-US
 reviews:
   profile: chill
   high_level_summary: true
+  assess_linked_issues: true
+  pre_merge_checks:
+    issue_assessment:
+      mode: error
+    custom_checks:
+      - name: "Success Criteria"
+        mode: error
+        instructions: >-
+          Read the linked Jira work item in project SC and evaluate each item in its
+          "Success criteria" section against this PR's code and tests. Report Met, Not met, or
+          Not verifiable per item with file and line evidence. Fail if any item is Not met.
 
 knowledge_base:
+  issues:
+    scope: auto
+  jira:
+    usage: enabled
+    project_keys:
+      - "SC"
   code_guidelines:
     enabled: true
     filePatterns:
